@@ -27,10 +27,13 @@ exports.before = {
 };
 
 exports.after = {
-  all: [hooks.populate('players', {
+  all: [
+    hooks.populate('players', {
     service: 'users',
     field: 'playerIds'
-  }), isGameFull(), firstEncounter()],
+  }),
+  isGameFull(),
+  firstEncounter()],
   find: [],
   get: [],
   create: [],
